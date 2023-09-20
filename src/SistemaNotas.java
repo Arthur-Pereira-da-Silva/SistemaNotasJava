@@ -12,7 +12,7 @@ public class SistemaNotas {
             System.out.println("2. Editar aluno");
             System.out.println("3. Visualizar boletim dos alunos");
             System.out.println("4. Sair");
-            System.out.print("Escolha uma opÁ„o: ");
+            System.out.print("Escolha uma op√ß√£o: ");
 
             int escolha = scanner.nextInt();
             scanner.nextLine(); 
@@ -22,7 +22,7 @@ public class SistemaNotas {
                     System.out.print("Digite o nome do aluno: ");
                     String nomeAluno = scanner.nextLine();
 
-                    System.out.print("Digite o n˙mero de matrÌcula do aluno: ");
+                    System.out.print("Digite o n√∫mero de matr√≠cula do aluno: ");
                     int matriculaAluno = scanner.nextInt();
                     scanner.nextLine(); 
 
@@ -38,7 +38,7 @@ public class SistemaNotas {
 
                         Disciplina disciplina = new Disciplina(nomeDisciplina);
 
-                        System.out.print("Digite a mÈdia para a disciplina " + nomeDisciplina + ": ");
+                        System.out.print("Digite a m√©dia para a disciplina " + nomeDisciplina + ": ");
                         double media = scanner.nextDouble();
                         scanner.nextLine(); 
 
@@ -54,9 +54,9 @@ public class SistemaNotas {
                     if (alunos.isEmpty()) {
                         System.out.println("Nenhum aluno cadastrado.");
                     } else {
-                        System.out.print("Digite o n˙mero de matrÌcula do aluno que deseja editar: ");
+                        System.out.print("Digite o n√∫mero de matr√≠cula do aluno que deseja editar: ");
                         int matriculaEditar = scanner.nextInt();
-                        scanner.nextLine(); // Consumir a quebra de linha pendente
+                        scanner.nextLine(); 
 
                         boolean alunoEncontrado = false;
                         for (Aluno alun : alunos) {
@@ -78,9 +78,9 @@ public class SistemaNotas {
                                     boolean disciplinaEncontrada = false;
                                     for (Disciplina disciplina : alun.getDisciplinas()) {
                                         if (disciplina.getNome().equalsIgnoreCase(nomeDisciplinaEditar)) {
-                                            System.out.print("Digite a nova mÈdia para a disciplina " + nomeDisciplinaEditar + ": ");
+                                            System.out.print("Digite a nova m√©dia para a disciplina " + nomeDisciplinaEditar + ": ");
                                             double novaMedia = scanner.nextDouble();
-                                            scanner.nextLine(); // Consumir a quebra de linha pendente
+                                            scanner.nextLine();
                                             disciplina.registrarNota(novaMedia);
                                             disciplinaEncontrada = true;
                                             break;
@@ -88,7 +88,7 @@ public class SistemaNotas {
                                     }
 
                                     if (!disciplinaEncontrada) {
-                                        System.out.println("Disciplina n„o encontrada.");
+                                        System.out.println("Disciplina n√£o encontrada.");
                                     }
                                 }
 
@@ -99,7 +99,7 @@ public class SistemaNotas {
                         }
 
                         if (!alunoEncontrado) {
-                            System.out.println("Aluno com a matrÌcula " + matriculaEditar + " n„o encontrado.");
+                            System.out.println("Aluno com a matr√≠cula " + matriculaEditar + " n√£o encontrado.");
                         }
                     }
                     break;
@@ -120,7 +120,7 @@ public class SistemaNotas {
                     scanner.close();
                     System.exit(0);
                 default:
-                    System.out.println("OpÁ„o inv·lida. Tente novamente.");
+                    System.out.println("Op√ß√£o inv√°lida. Tente novamente.");
             }
         }
     }
